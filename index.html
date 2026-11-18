@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStore - Loja Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-stone-900 text-stone-300 text-xs py-2 px-4 text-center tracking-wide">
+        Frete Grátis para todo o Brasil em compras acima de R$ 250 • Parcele em até 10x sem juros
+    </div>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-stone-900 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                    S
+                </div>
+                <span class="font-bold text-xl tracking-tight text-stone-900">SmartStore</span>
+            </a>
+
+            <!-- Search Bar Desktop -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-12">
+                <div class="relative w-full">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-stone-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="searchInput" placeholder="Buscar smartwatches, fones, acessórios..." 
+                        class="w-full pl-11 pr-4 py-2.5 bg-stone-100 border border-transparent rounded-full text-sm focus:outline-none focus:bg-white focus:border-stone-400 transition">
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-full hover:bg-stone-100 transition text-stone-700">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cartBadge" class="absolute top-1 right-1 bg-emerald-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm scale-0 transition-transform">0</span>
+                </button>
+                <a href="https://wa.me/5527999999999?text=Olá!%20Gostaria%20de%20atendimento." target="_blank" 
+                   class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-medium text-sm transition shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Contato</span>
+                </a>
+            </div>
+        </div>
+        <!-- Search bar mobile -->
+        <div class="md:hidden px-4 pb-3">
+            <div class="relative w-full">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-stone-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="searchInputMobile" placeholder="Buscar produtos..." 
+                    class="w-full pl-11 pr-4 py-2 bg-stone-100 border border-transparent rounded-full text-sm focus:outline-none focus:bg-white focus:border-stone-400 transition">
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-stone-900 to-stone-800 text-white overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold tracking-wide border border-emerald-500/20">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Lançamento Exclusivo 2026</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Tecnologia e estilo no seu pulso.
+                </h1>
+                <p class="text-stone-300 text-lg max-w-lg font-light">
+                    Descubra nossa linha completa de smartwatches premium com monitoramento avançado de saúde, bateria de longa duração e design sofisticado.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#produtos" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-8 py-3.5 rounded-full transition shadow-lg shadow-emerald-900/35 text-center">
+                        Ver Coleção
+                    </a>
+                    <a href="https://wa.me/5527999999999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20smartwatches." target="_blank" 
+                       class="bg-stone-800 hover:bg-stone-700 border border-stone-700 text-white font-medium px-8 py-3.5 rounded-full transition text-center flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Falar com Atendente</span>
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="w-full max-w-md bg-stone-800/50 border border-stone-700/60 p-6 rounded-3xl backdrop-blur-xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800" alt="Smartwatch Premium" class="rounded-2xl w-full h-72 object-cover shadow-md mb-6">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Mais Vendido</span>
+                            <h3 class="text-xl font-bold text-white">Ultra Series 9 Pro</h3>
+                        </div>
+                        <span class="text-2xl font-black text-white">R$ 349,90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG / PRODUCTS -->
+    <main id="produtos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight text-stone-900">Nossos Produtos</h2>
+                <p class="text-stone-500 mt-1">Escolha o modelo ideal para o seu dia a dia.</p>
+            </div>
+            <!-- Category Filters -->
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filterButtons">
+                <button onclick="filterCategory('all')" class="category-btn active px-4 py-2 rounded-full text-sm font-medium transition bg-stone-900 text-white shadow-sm">Todos</button>
+                <button onclick="filterCategory('smartwatch')" class="category-btn px-4 py-2 rounded-full text-sm font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-700">Smartwatches</button>
+                <button onclick="filterCategory('fone')" class="category-btn px-4 py-2 rounded-full text-sm font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-700">Fones & Áudio</button>
+                <button onclick="filterCategory('acessorio')" class="category-btn px-4 py-2 rounded-full text-sm font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-700">Acessórios</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Injected via JS -->
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-stone-900 font-bold text-lg">S</div>
+                    <span class="font-bold text-white text-lg">SmartStore</span>
+                </div>
+                <p class="text-sm text-stone-400">Sua loja de confiança para tecnologia vestível e acessórios de alto desempenho.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Atendimento</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://wa.me/5527999999999" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> WhatsApp Direto</a></li>
+                    <li><span class="text-stone-500">Segunda à Sexta: 09h às 18h</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Links Úteis</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#produtos" class="hover:text-white transition">Catálogo</a></li>
+                    <li><a href="#" onclick="toggleCart(); return false;" class="hover:text-white transition">Meu Carrinho</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Segurança</h4>
+                <p class="text-xs text-stone-400 leading-relaxed">Ambiente 100% seguro. Pagamento facilitado e entrega garantida para todo o território nacional.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-800 text-center text-xs text-stone-500">
+            &copy; 2026 SmartStore. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- CART SIDE DRAWER -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 border-b border-stone-200 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-cart-shopping text-emerald-600"></i>
+                        <h3 class="font-bold text-lg text-stone-900">Seu Carrinho</h3>
+                    </div>
+                    <button onclick="toggleCart()" class="p-2 rounded-full hover:bg-stone-100 text-stone-500 transition">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Cart items injected here -->
+                </div>
+                <div class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+                    <div class="flex justify-between items-center text-stone-600 text-sm">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal" class="font-semibold text-stone-900 text-base">R$ 0,00</span>
+                    </div>
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 px-4 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Finalizar Compra via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="productModal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl z-10 p-6 sm:p-8">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent" class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                <!-- Modal content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./src/js/products.js"></script>
+    <script src="./src/js/cart.js"></script>
+    <script src="./src/js/app.js"></script>
+</body>
+</html>

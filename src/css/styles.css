@@ -1,0 +1,8 @@
+/* Estilos personalizados e ajustes visuais da loja */
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Suavizar rolagem */
+html {
+    scroll-behavior: smooth;
+}
